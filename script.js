@@ -48,7 +48,7 @@ function CalcularHora() {
   }
 }
 
-//===============================
+//================================================
 //3- Realizar una funtion que muestre la tabla de multiplicar
 //de un número introducido por teclado.
 
@@ -67,4 +67,37 @@ function multiplicar() {
       console.log(`${num} x ${y} = ${resp}`);
     }
   }
+}
+
+//============================================================
+//2-Capture números hasta que se introduzca un cero.
+// Debe imprimir la suma y la media de todos los números introducidos.
+
+function hastaCero() {
+  let suma = 0;
+  let contador = 0;
+  let numero;
+
+  // Bucle do-while para solicitar números
+  do {
+    // Solicitar al usuario que ingrese un número
+    numero = numero = parseFloat(
+      prompt("Ingresa un número (ingresa 0 para terminar):")
+    );
+
+    // Verificar si el número es válido y diferente de cero
+    if (!isNaN(numero) && numero !== 0) {
+      // Sumar el número al total
+      suma += numero;
+      // Incrementar el contador
+      contador++;
+    }
+  } while (numero !== 0);
+
+  // Calcular la media
+  let media = contador === 0 ? 0 : suma / contador;
+
+  // Imprimir resultados
+  console.log("Suma: " + suma);
+  console.log("Media: " + media);
 }
